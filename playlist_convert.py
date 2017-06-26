@@ -39,7 +39,7 @@ track_response = playlist['tracks']
 gplaylist = []
 
 for song in track_response['items']:
-    song_search_string = "%s - %s" % (song['track']['artists'][0]['name'], song['track']['name'])
+    song_search_string = "%s - %s - %s" % (song['track']['artists'][0]['name'], song['track']['name'], song['track']['album']['name'])
     song_result = gapi.search(song_search_string)
     gplaylist.append(song_result['song_hits'][0]['track']['storeId'])
 
